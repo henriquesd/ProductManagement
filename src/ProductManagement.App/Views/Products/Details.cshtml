@@ -1,0 +1,49 @@
+﻿@model ProductManagement.App.ViewModels.ProductViewModel
+
+@{
+    ViewData["Title"] = "Product Detail - " + Model.Name;
+}
+
+<h4 style="padding-top: 50px">@ViewData["Title"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd>
+                @Model.Price.ToString("C")
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.RegisterDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.RegisterDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Active)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Active)
+            </dd>
+        </dl>
+
+        <div>
+            <a class="btn btn-dark" asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+            <a class="btn btn-info" href="javascript:window.history.back();">Back</a>
+        </div>
+    </div>
+</div>

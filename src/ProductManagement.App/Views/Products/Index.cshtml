@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ProductManagement.App.ViewModels.ProductViewModel>
+
+@{
+    ViewData["Title"] = "Products List";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<p>
+    <a class="btn btn-info" asp-action="Create">New Product</a>
+    <a class="btn btn-success" asp-action="ExportCsv"><span class="fa fa-file-export"></span> Export CSV</a>
+    <a class="btn btn-success" asp-action="ExportJson"><span class="fa fa-file-export"></span> Export JSON</a>
+</p>
+<partial name="_ProductsList" />
